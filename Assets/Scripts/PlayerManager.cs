@@ -16,6 +16,8 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
 
     #region public fields
 
+    public GameObject PlayerUIPrefab;
+
     public float playerHealth = 1f;
 
     [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
@@ -80,12 +82,23 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
         }
 
         UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    
+        if (PlayerUIPrefab !=null)
+        {
+            GameObject _uiGO = Instantiate(PlayerUIPrefab);
+            _uiGO.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+        }
+        else
+        {
+            Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
+        }
+    
     }
 
     void Update()
     {
 
-        if (beams!= null && isFiring!=beams.activeInHierarchy) 
+        if (beams!= null && isFiring!= beams.activeInHierarchy) 
         {
             beams.SetActive(isFiring);
         }
@@ -161,6 +174,9 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
         {
             transform.position = new Vector3(0f, 5f, 0f);
         }
+
+        GameObject _uiGO = Instantiate(this.PlayerUIPrefab);
+        _uiGO.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
     }
 
     public override void OnDisable()

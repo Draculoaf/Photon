@@ -183,7 +183,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 798d77901ce10744ba8d96b604b09807, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -408,7 +408,7 @@ Transform:
   m_GameObject: {fileID: 2121390133}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -0.669, y: 4.122, z: 1.158}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -466,6 +466,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4585438039466611254, guid: 7dcf9237e1c81854fa4e68b19a58a912, type: 3}
+      propertyPath: followOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024408628252719101, guid: 7dcf9237e1c81854fa4e68b19a58a912, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7082898696815587716, guid: 7dcf9237e1c81854fa4e68b19a58a912, type: 3}
+      propertyPath: PlayerUIPrefab
+      value: 
+      objectReference: {fileID: 4236628027216278028, guid: 4805032100ee4ec4297f37dee033f49e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
